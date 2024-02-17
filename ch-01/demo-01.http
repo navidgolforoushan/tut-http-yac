@@ -1,0 +1,10 @@
+GET https://httpbin.org/anything
+
+HTTP/1.1 200  - OK
+date: Sat, 17 Feb 2024 02:37:37 GMT
+content-type: application/json
+content-length: 383
+connection: close
+server: gunicorn/19.9.0
+access-control-allow-origin: *
+access-control-allow-credentials: true
