@@ -1,0 +1,27 @@
+{{+
+    const token= 't2';
+    exports.defaultHeaders={
+        'Authorization': `Brearer ${token}`,
+        'Email': 'ngolforoushan@gmail.com'
+    }
+}}
+###
+GET https://httpbin.org/anything?query=camry&page=4
+...defaultHeaders
+{
+    "color":"red",
+    "engine":"v8"
+}
+###
+GET https://httpbin.org/anything
+...defaultHeaders
+Cookie: userId=A657483
+
+HTTP/1.1 200  - OK
+date: Sat, 17 Feb 2024 05:20:24 GMT
+content-type: application/json
+content-length: 505
+connection: close
+server: gunicorn/19.9.0
+access-control-allow-origin: *
+access-control-allow-credentials: true
