@@ -1,0 +1,27 @@
+GET {{carServiceUrl}}Auth
+###
+# @name authResponse
+POST {{carServiceUrl}}Auth
+Content-Type: application/json
+{
+  "username": "navid",
+  "password": "password"
+}
+
+HTTP/1.1 200  - OK
+connection: close
+content-type: application/json; charset=utf-8
+date: Thu, 29 Feb 2024 03:14:43 GMT
+server: Kestrel
+transfer-encoding: chunked
+###
+# @forceRef authResponse
+GET {{carServiceUrl}}Cars/Index
+SimpleAuth:{{authResponse.token}}
+
+HTTP/1.1 200  - OK
+connection: close
+content-type: application/json; charset=utf-8
+date: Thu, 29 Feb 2024 03:14:47 GMT
+server: Kestrel
+transfer-encoding: chunked
